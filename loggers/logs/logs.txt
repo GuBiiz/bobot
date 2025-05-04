@@ -1,1 +1,0 @@
-[32mINFO      [0m - 2025-04-30 21:00:31 - client          : [37mlogging in using static token[0m

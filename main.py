@@ -1,6 +1,6 @@
 from typing import Callable, Iterable, Any, Awaitable
 
-import utils.settings as settings
+import settings.settings as settings
 
 import discord
 from discord.app_commands.tree import CommandTree

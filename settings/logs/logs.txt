@@ -1,0 +1,43 @@
+[32mINFO      [0m - 2025-05-04 20:19:20 - client          : [37mlogging in using static token[0m
+[32mINFO      [0m - 2025-05-04 20:19:22 - gateway         : [37mShard ID None has connected to Gateway (Session ID: 63d73d1dd09381d7764896a1def0d805).[0m
+[31mERROR     [0m - 2025-05-04 20:23:53 - client          : [37mIgnoring exception in on_message[0m
+Traceback (most recent call last):
+  File "/home/saksham/Desktop/Projects/Bo Bot/.venv/lib64/python3.13/site-packages/discord/client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/saksham/Desktop/Projects/Bo Bot/cogs/Level.py", line 105, in on_message
+    exp += randint(1, 20)
+    ^^^
+UnboundLocalError: cannot access local variable 'exp' where it is not associated with a value
+[31mERROR     [0m - 2025-05-04 20:26:00 - bot             : [37mIgnoring exception in command leaderboard[0m
+Traceback (most recent call last):
+  File "/home/saksham/Desktop/Projects/Bo Bot/.venv/lib64/python3.13/site-packages/discord/app_commands/commands.py", line 857, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saksham/Desktop/Projects/Bo Bot/cogs/Level.py", line 168, in server_leaderboard
+    file = discord.File("images/server_icon.png", filename="server_icon.png")
+  File "/home/saksham/Desktop/Projects/Bo Bot/.venv/lib64/python3.13/site-packages/discord/file.py", line 97, in __init__
+    self.fp = open(fp, 'rb')
+              ~~~~^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'images/server_icon.png'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/saksham/Desktop/Projects/Bo Bot/.venv/lib64/python3.13/site-packages/discord/ext/commands/hybrid.py", line 450, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saksham/Desktop/Projects/Bo Bot/.venv/lib64/python3.13/site-packages/discord/app_commands/commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'leaderboard' raised an exception: FileNotFoundError: [Errno 2] No such file or directory: 'images/server_icon.png'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/saksham/Desktop/Projects/Bo Bot/.venv/lib64/python3.13/site-packages/discord/ext/commands/hybrid.py", line 450, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saksham/Desktop/Projects/Bo Bot/.venv/lib64/python3.13/site-packages/discord/app_commands/commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'leaderboard' raised an exception: FileNotFoundError: [Errno 2] No such file or directory: 'images/server_icon.png'
+[32mINFO      [0m - 2025-05-04 22:31:07 - gateway         : [37mShard ID None has successfully RESUMED session 63d73d1dd09381d7764896a1def0d805.[0m
+[32mINFO      [0m - 2025-05-04 22:56:29 - gateway         : [37mShard ID None has successfully RESUMED session 63d73d1dd09381d7764896a1def0d805.[0m

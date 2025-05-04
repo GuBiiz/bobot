@@ -59,19 +59,24 @@
     "file": {
       "level": "INFO",
       "class": "logging.FileHandler",
-      "filename": "loggers/logs/logs.txt",
+      "filename": "settings/logs/logs.txt",
       "mode": "w",
       "formatter": "verbose"
     }
   },
   "loggers": {
     "bot": {
-      "handlers": ["console", "console2"],
+      "handlers": [
+        "console",
+        "console2"
+      ],
       "level": "INFO",
       "propagate": false
     },
     "discord": {
-      "handlers": ["file"],
+      "handlers": [
+        "file"
+      ],
       "level": "INFO",
       "propagate": false
     }

@@ -6,11 +6,11 @@ from requests import get
 from math import sqrt, floor, ceil
 from random import randint
 from sqlite3 import connect
-from utils.settings import LOGGING_CHANNEL
+from settings.settings import LOGGING_CHANNEL
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
-from typing import Optional
+from typing import Optional, Tuple
 
 
 database = connect("database.sqlite")
@@ -22,7 +22,7 @@ cursor.execute(
 )
 
 
-def fetch_user_info(message: discord.Message):
+def fetch_user_info(message: discord.Message) -> Tuple[int, int, int]:
     cursor.execute(f"""
                     SELECT * FROM Level
                     WHERE user_id = {message.author.id}
@@ -94,6 +94,7 @@ class Leveling(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
+        exp, last_level = 0, 0
         if message.author.bot:
             return
 
